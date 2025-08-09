@@ -8,3 +8,20 @@ docker run -d \
   --restart unless-stopped \
   ghcr.io/spectre-pro/mcpo-docker
 ```
+
+you need to add the file ```setting.json``` input the mcp content like this and change ```path/for/your/setting.json``` to your path
+```JSON
+{
+  "mcp": {
+    "servers": {
+      "github": {
+        "command": "/path/to/github-mcp-server",
+        "args": ["stdio"],
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+        }
+      }
+    }
+  }
+}
+```
