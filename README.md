@@ -8,6 +8,7 @@ docker run -d \
   --restart unless-stopped \
   ghcr.io/spectre-pro/mcpo-docker
 ```
+ you can use the ```-e API_KEY=the_api_key_you_want``` to input the key and the key can't have the space
 
 you need to add the file ```setting.json``` input the mcp content like this and change ```path/for/your/setting.json``` to your path
 ```JSON
