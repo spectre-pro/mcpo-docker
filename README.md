@@ -25,3 +25,28 @@ you need to add the file ```setting.json``` input the mcp content like this and 
   }
 }
 ```
+
+open-webui + mcpo ```docker-compose.yml```
+```yml
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui:/app/backend/data
+    restart: unless-stopped
+ 
+  mcpo:
+    image: ghcr.io/spectre-pro/mcpo-docker
+    container_name: mcpo
+    ports:
+      - "8000:8000"
+    volumes:
+      - path/for/your/setting.json:/setting.json
+    restart: unless-stopped
+ 
+volumes:
+  open-webui:
+```
